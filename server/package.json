@@ -10,7 +10,8 @@
     "build": "tsc",
     "start": "ts-node src/app.ts",
     "typeorm": "typeorm-ts-node-commonjs",
-    "migration": " npm run typeorm migration:run -- -d ./src/data-source.ts"
+    "migration": " npm run typeorm migration:run -- -d ./src/data-source.ts",
+    "revert": " npm run typeorm migration:revert -- -d ./src/data-source.ts"
   },
   "keywords": [],
   "author": "",

@@ -33,7 +33,7 @@ export class AuthController {
     }
   }
 
-  static async getProfile(req: Request, res: Response) {
+  static async getProfile(req: any, res: Response) {
     if (!req[" currentUser"]) {
       return res.status(401).json({ message: "Unauthorized" });
     }

@@ -12,10 +12,14 @@ export class UserController {
         user.name = name;
         user.email = email;
         user.password = encryptedPassword;
-        user.role = role;
 
         const userRepository = AppDataSource.getRepository(User);
-        await userRepository.save(user);
+        
+        try {
+            await userRepository.save(user);
+        } catch (error) {
+            return res.status(500).json({ message: "Internal server error" });
+        }
 
         // userRepository.create({ Name, email, password });
         const token = encrypt.generateToken({ id: user.id });

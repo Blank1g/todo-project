@@ -6,7 +6,7 @@ dotenv.config();
 const { JWT_SECRET } = process.env;
 
 export const authentification = (
-  req: Request,
+  req: any,
   res: Response,
   next: NextFunction
 ) => {
