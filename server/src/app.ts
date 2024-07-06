@@ -19,22 +19,24 @@ app.get("*", (req: Request, res: Response) => {
   res.status(505).json({ message: "Bad Request" });
 });
 
-let retries = 5;
-while (retries) {
-  try {
-    AppDataSource.initialize()
-      .then(async () => {
-        app.listen(PORT, () => {
-          console.log("Server is running on http://localhost:" + PORT);
-        });
-        console.log("Data Source has been initialized!");
-      }).catch((error) => console.log(error));
-
-      break;
-  } catch (error) {
-    console.log(error);
-    retries -= 1;
-    console.log(`Retries left: ${retries}`);
-    // await new Promise((res) => setTimeout(res, 5000));
+let retries = 10;
+(async ()=>{
+  while (retries) {
+    try {
+     await AppDataSource.initialize()
+        .then(async () => {
+          app.listen(PORT, () => {
+            console.log("Server is running on http://localhost:" + PORT);
+          });
+          console.log("Data Source has been initialized!");
+        })
+  
+        break;
+    } catch (error) {
+      console.log(error);
+      retries -= 1;
+      console.log(`Retries left: ${retries}`);
+      await new Promise((res) => setTimeout(res, 5000));
+    }
   }
-}
+})();
