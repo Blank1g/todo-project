@@ -1,0 +1,17 @@
+<form [formGroup]="signupForm" class="form">
+
+    <label for="name">Name: </label>
+    <input type="text" id="name" formControlName="name" class="form-control" required>
+
+    <label for="email">Email: </label>
+    <input type="email" id="email" formControlName="email" class="form-control" required>
+
+    <label for="password">Password: </label>
+    <input type="password" id="password" formControlName="password" class="form-control" required>
+
+    <label for="confirmPassword">Confirm Password: </label>
+    <input type="password" id="confirmPassword" formControlName="confirmPassword" class="form-control" required>
+
+    <button type="submit" (click)="signup()" class="form-submit">Signup</button>
+    <a routerLink="/login" class="form-link">login</a>
+</form>

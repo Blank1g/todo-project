@@ -12,6 +12,18 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(errorHandler);
+app.use((req: Request, res: Response, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PUT, DELETE, OPTIONS"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+  );
+  next();
+});
 const { PORT = 3000 } = process.env;
 app.use("/auth", userRouter);
 
