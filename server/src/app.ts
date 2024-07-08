@@ -4,8 +4,9 @@ import { Request, Response } from "express";
 import "reflect-metadata";
 
 import { AppDataSource } from "./data-source";
-import { userRouter } from "./routes/user.routes";
 import { errorHandler } from "./middleware/errorHandler";
+import { userRouter } from "./routes/user.routes";
+import { todoRoutes } from "./routes/todo.routes";
 
 dotenv.config();
 
@@ -25,7 +26,9 @@ app.use((req: Request, res: Response, next) => {
   next();
 });
 const { PORT = 3000 } = process.env;
+
 app.use("/auth", userRouter);
+app.use("/todo", todoRoutes);
 
 app.get("*", (req: Request, res: Response) => {
   res.status(505).json({ message: "Bad Request" });

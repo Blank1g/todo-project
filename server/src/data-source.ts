@@ -3,6 +3,7 @@ import { DataSource } from "typeorm";
 
 import * as dotenv from "dotenv";
 import { User } from "./entity/User.entity";
+import { Todo } from "./entity/Todo.entity";
 
 dotenv.config();
 
@@ -16,10 +17,10 @@ export const AppDataSource = new DataSource({
     password: DB_PASSWORD,
     database: DB_DATABASE,
 
-    synchronize: NODE_ENV === "dev" ? false : false,
+    synchronize: NODE_ENV === "dev" ? true : false,
     //logging logs sql command on the treminal
     logging: NODE_ENV === "dev" ? false : false,
-    entities: [User],
+    entities: [Todo, User],
     migrations: [__dirname + "/migrations/*.ts"],
     subscribers: [],
 });

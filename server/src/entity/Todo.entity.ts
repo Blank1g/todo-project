@@ -1,14 +1,15 @@
 import {
     Entity,
     Column,
-    OneToMany,
+    JoinColumn,
+    ManyToOne,
 } from 'typeorm';
 
 import { BaseEntity } from './Base.entity';
-import { Todo } from './Todo.entity';
+import { User } from './User.entity';
   
-@Entity('users')
-export class User extends BaseEntity{
+@Entity('todos')
+export class Todo extends BaseEntity{
     @Column({ nullable: false })
     name: string;
   
@@ -18,6 +19,6 @@ export class User extends BaseEntity{
     @Column({ nullable: false })
     password: string;
 
-    @OneToMany(() => Todo, todo => todo.user)
-    todo: Todo[];
+    @ManyToOne(() => User, user => user.todo)
+    user: User;
 }
