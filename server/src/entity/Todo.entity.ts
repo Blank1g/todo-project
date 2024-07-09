@@ -11,13 +11,10 @@ import { User } from './User.entity';
 @Entity('todos')
 export class Todo extends BaseEntity{
     @Column({ nullable: false })
-    name: string;
-  
-    @Column({ nullable: false, unique: true})
-    email: string;
+    title: string;
   
     @Column({ nullable: false })
-    password: string;
+    description: string;
 
     @ManyToOne(() => User, user => user.todo)
     user: User;

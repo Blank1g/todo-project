@@ -21,7 +21,7 @@ Router.post(
     TodoController.createTodo
 );
 Router.put(
-    "/update/:id",
+    "/update",
     authentification,
     TodoController.updateTodoById
 );
