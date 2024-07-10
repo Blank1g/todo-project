@@ -16,17 +16,17 @@ Router.get(
     TodoController.getTodoById
 );
 Router.post(
-    "/create",
+    "",
     authentification,
     TodoController.createTodo
 );
 Router.put(
-    "/update",
+    "",
     authentification,
     TodoController.updateTodoById
 );
 Router.delete(
-    "/delete/:id",
+    "/:id",
     authentification,
     TodoController.deleteTodoById
 );

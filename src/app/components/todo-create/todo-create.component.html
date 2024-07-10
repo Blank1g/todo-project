@@ -1,0 +1,5 @@
+<form [formGroup]="todoForm" class="form">
+    <input type="title" id="title" formControlName="title" class="form-input" required>
+    <textarea type="description" id="description" formControlName="description" class="form-input" required rows="5"></textarea>
+    <button type="submit" (click)="onCreate()">Create</button>
+</form>

@@ -1,0 +1,17 @@
+<div class="todo">
+    <ng-container *ngIf="!editMode">
+        <div class="todo-title">{{ todo.title }}</div>
+        <div class="todo-description">{{ todo.description }}</div>
+    </ng-container>
+    <ng-container *ngIf="editMode">
+        <form [formGroup]="todoForm">
+            <input type="title" id="title" formControlName="title" class="todo-input" required>
+            <textarea type="description" id="description" formControlName="description" class="todo-input" required rows="5"></textarea>
+        </form>
+    </ng-container>
+    <div class="todo-actions">
+        <button class="todo-actions-edit" (click)="toggleEdit()">Edit</button>
+        <button class="todo-actions-done" type="submit" (click)="onEdit(todo)" *ngIf="editMode">Done</button>
+        <button class="todo-actions-delete" (click)="onDelete(todo)">Delete</button>
+    </div>
+</div>

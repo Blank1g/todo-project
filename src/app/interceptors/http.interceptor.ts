@@ -7,7 +7,12 @@ export const httpInterceptor: HttpInterceptorFn = (req, next) => {
 
   const localStorageService = inject(LocalStorageService);
   
-  req.headers.set('Authorization', 'Bearer ' + localStorageService.getItem('access_token'));
+  const token = localStorageService.getItem('access_token');
+  const authReq = req.clone({
+    setHeaders: {
+      Authorization: `Bearer ${token}`
+    }
+  });
 
-  return next(req);
+  return next(authReq);
 };
