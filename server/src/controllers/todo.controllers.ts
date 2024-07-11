@@ -3,6 +3,7 @@ import { Request, Response } from "express";
 import { AppDataSource } from "../data-source";
 import { User } from "../entity/User.entity";
 import { Todo } from "../entity/Todo.entity";
+import { UploadService } from "../services/upload.service";
 
 export class TodoController {
     static async getTodos(req: any, res: Response) {
@@ -138,6 +139,15 @@ export class TodoController {
             await todoRepository.remove(todo);
 
             return res.status(200).json({ message: "Todo deleted successfully" });
+        } catch (error) {
+            console.error(error);
+            return res.status(500).json({ message: "Internal server error" });
+        }
+    }
+
+    static async uploadFile(req: Request, res: Response) {
+        try {
+            return UploadService.uploadFile(req, res);
         } catch (error) {
             console.error(error);
             return res.status(500).json({ message: "Internal server error" });

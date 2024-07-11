@@ -1,8 +1,8 @@
+import "reflect-metadata"
 import express from "express";
-import * as dotenv from "dotenv";
+import * as dotenv from "dotenv";;
 import { Request, Response } from "express";
-import "reflect-metadata";
-
+ 
 import { AppDataSource } from "./data-source";
 import { errorHandler } from "./middleware/errorHandler";
 import { userRouter } from "./routes/user.routes";
