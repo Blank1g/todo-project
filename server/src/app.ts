@@ -7,6 +7,7 @@ import { AppDataSource } from "./data-source";
 import { errorHandler } from "./middleware/errorHandler";
 import { userRouter } from "./routes/user.routes";
 import { todoRoutes } from "./routes/todo.routes";
+import { cacheRoutes } from "./routes/cache.routes";
 
 dotenv.config();
 
@@ -29,6 +30,7 @@ const { PORT = 3000 } = process.env;
 
 app.use("/auth", userRouter);
 app.use("/todo", todoRoutes);
+app.use("/cache", cacheRoutes);
 
 app.get("*", (req: Request, res: Response) => {
   res.status(505).json({ message: "Bad Request" });
