@@ -3,6 +3,8 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 import { Todo } from '../../interfaces/todo';
+import { TodoService } from '../../api/todo.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-todo-item',
@@ -14,6 +16,8 @@ import { Todo } from '../../interfaces/todo';
 export class TodoItemComponent implements OnInit {
 
   private formBuilder = inject(FormBuilder);
+  private todoService = inject(TodoService);
+  private router = inject(Router);
 
   editMode = false;
 
@@ -23,6 +27,7 @@ export class TodoItemComponent implements OnInit {
   });
 
   @Input() todo!: Todo;
+  @Input() listPage = false;
   @Output() deleteTodo = new EventEmitter<string>();
   @Output() editTodo = new EventEmitter<Todo>();
 
@@ -38,10 +43,14 @@ export class TodoItemComponent implements OnInit {
   }
 
   onDelete(todo: Todo) {
-    this.deleteTodo.emit(todo.id);
+    if (!todo.id) return;
+    
+    this.todoService.deleteTodoById(todo.id).subscribe(() => {
+      this.deleteTodo.emit(todo.id);
+    });
   }
 
-  onEdit(todo: Todo) {
+  onEdit() {
     if (!this.todoForm.valid) return; 
 
     const title = this.todoForm.value.title;
@@ -49,7 +58,20 @@ export class TodoItemComponent implements OnInit {
 
     if (!title || !description) return;
 
-    this.editTodo.emit({ id: todo.id, title, description});
+    const newTodo = {
+      ...this.todo,
+      title,
+      description
+    }
+
+    this.todoService.updateTodoById(newTodo).subscribe((newTodo) => {
+      this.editTodo.emit(newTodo);
+      this.toggleEdit();
+    });
+  }
+
+  openItem() {
+    this.router.navigate(['/todo', this.todo.id]);
   }
 
 }

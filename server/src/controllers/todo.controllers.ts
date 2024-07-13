@@ -44,7 +44,7 @@ export class TodoController {
                 return res.status(404).json({ message: "Todo not found" });
             }
 
-            return res.status(200).json({ todo });
+            return res.status(200).json(todo);
         } catch (error) {
             console.error(error);
             return res.status(500).json({ message: "Internal server error" });
@@ -109,9 +109,9 @@ export class TodoController {
             todo.title = title;
             todo.description = description;
 
-            await todoRepository.save(todo);
+            const newTodo = await todoRepository.save(todo);
 
-            return res.status(200).json({ message: "Todo updated successfully" });
+            return res.status(200).json(newTodo);
         } catch (error) {
             console.error(error);
             return res.status(500).json({ message: "Internal server error" });
@@ -131,7 +131,7 @@ export class TodoController {
             const todo = await todoRepository.findOne({
                 where: { id },
             });
-
+            
             if (!todo) {
                 return res.status(404).json({ message: "Todo not found" });
             }

@@ -13,6 +13,10 @@ export const routes: Routes = [
             {
                 path: '',
                 loadComponent: () => import('./pages/todo/todo.component').then(m => m.TodoPageComponent)
+            },
+            {
+                path: ':id',
+                loadComponent: () => import('./pages/todo-item/todo-item.component').then(m => m.TodoItemComponentPage)
             }
         ]
     },

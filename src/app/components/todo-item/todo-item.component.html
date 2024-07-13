@@ -1,4 +1,5 @@
 <div class="todo">
+    <span class="todo-item-page" (click)="openItem()" *ngIf="listPage">Open Todo</span>
     <ng-container *ngIf="!editMode">
         <div class="todo-title">{{ todo.title }}</div>
         <div class="todo-description">{{ todo.description }}</div>
@@ -11,7 +12,7 @@
     </ng-container>
     <div class="todo-actions">
         <button class="todo-actions-edit" (click)="toggleEdit()">Edit</button>
-        <button class="todo-actions-done" type="submit" (click)="onEdit(todo)" *ngIf="editMode">Done</button>
+        <button class="todo-actions-done" type="submit" (click)="onEdit()" *ngIf="editMode">Done</button>
         <button class="todo-actions-delete" (click)="onDelete(todo)">Delete</button>
     </div>
 </div>

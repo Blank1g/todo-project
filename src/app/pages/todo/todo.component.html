@@ -1,4 +1,7 @@
 <div class="todo">
+    <ng-container *ngIf="cachedTodo">
+        <app-todo-recent [todo]="cachedTodo"></app-todo-recent>
+    </ng-container>
     <div class="todo-block">
         <div class="todo-block-item">
             <app-todo-create class="todo-block-component" (createTodo)="createTodo($event)"></app-todo-create>
@@ -6,7 +9,7 @@
     </div>
     <div class="todo-block">
         <div class="todo-block-item" *ngFor="let todo of todos">
-            <app-todo-item class="todo-block-component" [todo]="todo" (deleteTodo)="deleteTodo($event)" (editTodo)="editTodo($event)"></app-todo-item>
+            <app-todo-item class="todo-block-component" [todo]="todo" [listPage]="true" (deleteTodo)="deleteTodo($event)" (editTodo)="editTodo($event)"></app-todo-item>
         </div>
     </div>
 </div>

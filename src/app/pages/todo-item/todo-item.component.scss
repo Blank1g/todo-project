@@ -3,13 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
-
-    app-todo-recent {
-        position: absolute;
-        top: 0;
-        right: 20px;
-    }
+    height: 100vh;
 
     &-block {
         width: 100%;

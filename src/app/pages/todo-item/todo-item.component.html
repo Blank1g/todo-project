@@ -1,0 +1,7 @@
+<div class="todo">
+    <div class="todo-block">
+        <div class="todo-block-item" *ngIf="todo">
+            <app-todo-item class="todo-block-component" [todo]="todo" (deleteTodo)="deleteTodo()" (editTodo)="editTodo($event)"></app-todo-item>
+        </div>
+    </div>
+</div>
