@@ -7,12 +7,7 @@ export class CacheController {
 
     static async cacheData(req: Request, res: Response) {
         const dataToCache = req.body.data;
-        console.log(dataToCache, 'dataToCache');
-        console.log(req.body.cacheKey, 'req.body.cacheKey');
-        
-        
         await CacheController.redis.set(req.body.cacheKey, JSON.stringify(dataToCache), 'EX', 3600); // Cache for 1 hour
-        console.log('Data has been cached');
         res.status(200).json(dataToCache);
     }   
 
