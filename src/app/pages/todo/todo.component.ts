@@ -54,6 +54,8 @@ export class TodoPageComponent implements OnInit {
   getCahcedTodo(id?: string) {
     if (!id) {
       this.cacheService.getCachedTodoId().subscribe((cachedTodoId: string) => {
+        console.log(cachedTodoId, 'cachedTodoId');
+        
         const cachedTodo = this.todos.find((t) => t.id === cachedTodoId);
   
         if (cachedTodo) {
