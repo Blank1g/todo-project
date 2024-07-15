@@ -11,7 +11,7 @@ export class TodoController {
             const userRepository = AppDataSource.getRepository(User);
 
             const user = await userRepository.findOne({
-                where: { id: req[" currentUser"].id },
+                where: { id: req.currentUser.id },
                 relations: ["todo"],
             });
 
@@ -63,7 +63,7 @@ export class TodoController {
             const userRepository = AppDataSource.getRepository(User);
 
             const user = await userRepository.findOne({
-                where: { id: req[" currentUser"].id },
+                where: { id: req.currentUser.id },
             });
 
             if (!user) {

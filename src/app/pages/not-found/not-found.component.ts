@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { Location } from '@angular/common';
+import { Router } from '@angular/router';
+import { LocalStorageService } from '../../local/local-storage.service';
 
 @Component({
   selector: 'app-not-found',
@@ -10,11 +11,14 @@ import { Location } from '@angular/common';
 })
 export class NotFoundComponent {
 
-  private location = inject(Location);
-
+  private router = inject(Router);
+  private localStorageService = inject(LocalStorageService);
 
   back() {
-    this.location.back();
+    if (this.localStorageService.getItem('access_token')) {
+      this.router.navigate(['/todo']);
+    } else {
+      this.router.navigate(['/login']);
+    }
   }
-  
 }

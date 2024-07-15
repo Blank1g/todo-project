@@ -1,13 +1,15 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+import { map } from 'rxjs';
 
 import { Todo } from '../../interfaces/todo';
 import { TodoService } from '../../api/todo.service';
 import { TodoItemComponent } from "../../components/todo-item/todo-item.component";
 import { TodoCreateComponent } from "../../components/todo-create/todo-create.component";
 import { CacheService } from '../../api/cache.service';
-import { map } from 'rxjs';
 import { TodoRecentComponent } from "../../components/todo-recent/todo-recent.component";
+import { LocalStorageService } from '../../local/local-storage.service';
 
 @Component({
   selector: 'app-todo',
@@ -20,6 +22,8 @@ export class TodoPageComponent implements OnInit {
 
   private todoService = inject(TodoService);
   private cacheService = inject(CacheService);
+  private localStorageService = inject(LocalStorageService);
+  private router = inject(Router);
 
   todos: Todo[];
   cachedTodo: Todo;
@@ -82,6 +86,11 @@ export class TodoPageComponent implements OnInit {
 
   deleteTodo(id: string) {
     this.todos = this.todos.filter((t) => t.id !== id);
+  }
+
+  logout() {
+    this.localStorageService.removeItem('access_token');
+    this.router.navigate(['/login']);
   }
 
 }

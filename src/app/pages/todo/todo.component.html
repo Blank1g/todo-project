@@ -2,6 +2,7 @@
     <ng-container *ngIf="cachedTodo">
         <app-todo-recent [todo]="cachedTodo"></app-todo-recent>
     </ng-container>
+    <button class="todo-logout" (click)="logout()">Logout</button>
     <div class="todo-block">
         <div class="todo-block-item">
             <app-todo-create class="todo-block-component" (createTodo)="createTodo($event)"></app-todo-create>
