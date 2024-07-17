@@ -3,7 +3,7 @@ import { Redis } from "ioredis";
 
 export class CacheController {
 
-    static redis = new Redis({port: 6379});
+    static redis = new Redis({port: 6379, host: process.env.REDIS_SERVER_NAME});
 
     static async cacheData(req: any, res: Response) {
         try {
