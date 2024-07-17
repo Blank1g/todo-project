@@ -1,9 +1,9 @@
 import { Response } from "express";
-import Redis from "ioredis";
+import { Redis } from "ioredis";
 
 export class CacheController {
 
-    static redis = new Redis();
+    static redis = new Redis({port: 6379});
 
     static async cacheData(req: any, res: Response) {
         try {

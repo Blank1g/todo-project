@@ -1,7 +1,7 @@
 import Redis from "ioredis";
 import express from "express";
 
-const redis = new Redis();
+const redis = new Redis({port: 6379});
 
 export const checkCache = async (req: express.Request, res: express.Response, next: express.NextFunction) => {
   const cachedData = await redis.get(req.body.cacheKey);
