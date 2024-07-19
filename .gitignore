@@ -41,7 +41,10 @@ testem.log
 .DS_Store
 Thumbs.db
 
+# Env
 .env
+src/environments/environment.ts
+src/environments/environment.development.ts
 
 # Docker
 docker-compose.yml
