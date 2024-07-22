@@ -1,11 +1,12 @@
 FROM node:alpine as build
 
-# Install dependencies
-COPY package*.json ./
-RUN npm install
+WORKDIR /usr/src/app
 
-# Copy the rest of the application code
-COPY . .
+COPY . /usr/src/app
+
+RUN npm install -g @angular/cli
+
+RUN npm install
 
 # Build the Angular application
 RUN npm run build --prod
@@ -14,7 +15,7 @@ RUN npm run build --prod
 FROM nginx:stable-alpine
 
 # Copy the build output to the Nginx HTML directory
-COPY --from=build /app/dist/todo /usr/share/nginx/html
+COPY --from=build /usr/src/app/dist/todo /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 80
