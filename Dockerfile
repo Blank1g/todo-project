@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:alpine as build
 
 # Install dependencies
 COPY package*.json ./
