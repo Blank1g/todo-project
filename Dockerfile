@@ -1,3 +1,5 @@
+FROM node:alpine
+
 # Install dependencies
 COPY package*.json ./
 RUN npm install
