@@ -11,7 +11,7 @@ COPY . .
 RUN npm run build --prod
 
 # Stage 2: Serve the application with a production-ready server
-FROM nginx:alpine
+FROM nginx:stable-alpine
 
 # Copy the build output to the Nginx HTML directory
 COPY --from=build /app/dist/todo /usr/share/nginx/html
