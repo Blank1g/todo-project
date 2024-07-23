@@ -1,24 +1,16 @@
+# Stage 1: Build the Angular application
 FROM node:alpine as build
-
 WORKDIR /usr/src/app
-
-COPY . /usr/src/app
-
+COPY package.json /usr/src/app
 RUN npm install -g @angular/cli
-
 RUN npm install
-
-# Build the Angular application
+COPY . /usr/src/app
 RUN npm run build --prod
 
-# Stage 2: Serve the application with a production-ready server
+# Stage 2: Serve the application with nginx server
 FROM nginx:stable-alpine
-
-# Copy the build output to the Nginx HTML directory
-COPY --from=build /usr/src/app/dist/todo /usr/share/nginx/html
-
-# Expose port 80
+WORKDIR /usr/share/nginx/html
+RUN rm -rf ./*
+COPY --from=build /usr/src/app/dist/todo . 
 EXPOSE 80
-
-# Start Nginx server
 CMD ["nginx", "-g", "daemon off;"]
