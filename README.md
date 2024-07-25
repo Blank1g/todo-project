@@ -25,4 +25,4 @@ docker-compose down // down container
 Remember that you need to configure docker-compose.yml file and environment files for FE and BE.
 
 ## SERVER WILL NOT WORK WITHOUD DNS
-Here is guide for how to setup dns for server - [link](https://macdonaldchika.medium.com/how-to-install-tls-ssl-on-docker-nginx-container-with-lets-encrypt-5bd3bad1fd48)
+Here is guide for how to setup dns for server, and you need to configure public folder with ssl sergificate - [link](https://macdonaldchika.medium.com/how-to-install-tls-ssl-on-docker-nginx-container-with-lets-encrypt-5bd3bad1fd48)
