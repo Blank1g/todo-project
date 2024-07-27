@@ -26,3 +26,5 @@ Remember that you need to configure docker-compose.yml file and environment file
 
 ## SERVER WILL NOT WORK WITHOUD DNS
 Here is guide for how to setup dns for server, and you need to configure public folder with SSL sertificate - [link](https://macdonaldchika.medium.com/how-to-install-tls-ssl-on-docker-nginx-container-with-lets-encrypt-5bd3bad1fd48)
+
+## CI/CD - Jenkins:
