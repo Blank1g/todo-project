@@ -1,5 +1,6 @@
 pipeline {
   agent {
+    yum install -y docker-client
     docker { image 'node:latest' }
   }
   stages {
