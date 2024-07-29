@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Check out the source code from your repository
-                checkout scm
+                checkout todo-project
             }
         }
 
