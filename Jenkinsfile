@@ -2,13 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
-            steps {
-                // Check out the source code from your repository
-                checkout todo-project
-            }
-        }
-
         stage('Install Dependencies') {
             steps {
                 // Use Node.js and npm installed on the Jenkins agent
