@@ -1,27 +1,25 @@
 pipeline {
-    agent any
-
-    stages {
-        stage('Install Dependencies') {
-            steps {
-                // Use Node.js and npm installed on the Jenkins agent
-                sh 'npm install'
-            }
-        }
-
-        stage('Build Angular App') {
-            steps {
-                // Build the Angular app
-                sh 'npm run build'
-            }
-        }
+  agent {
+    docker { image 'node:latest' }
+  }
+  stages {
+    stage('Install') {
+      steps { sh 'npm install' }
     }
 
-    post {
-        success {
-            // Define post-build actions, if needed
-            // For example, you can archive the build artifacts
-            archiveArtifacts(allowEmptyArchive: true, artifacts: 'dist/**')
+    stage('Test') {
+      parallel {
+        stage('Static code analysis') {
+            steps { sh 'npm run-script lint' }
         }
+        stage('Unit tests') {
+            steps { sh 'npm run-script test' }
+        }
+      }
     }
-} 
+
+    stage('Build') {
+      steps { sh 'npm run-script build' }
+    }
+  }
+}
