@@ -27,7 +27,7 @@ pipeline {
 
     stage('Test') {
       steps {
-        sh 'npm run-script test -- --no-sandbox --watch=false --browsers ChromeHeadlessNoSandbox'
+        sh 'npm run-script test'
       }
     }
 
