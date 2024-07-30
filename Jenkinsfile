@@ -1,7 +1,8 @@
 pipeline {
   agent {
-    docker { 
-        image 'node:latest' 
+    docker {
+        image 'node:latest'
+        args '-u root' // This executes commands as root inside the Docker container
     }
   }
   stages {
