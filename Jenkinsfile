@@ -8,7 +8,7 @@ pipeline {
     }
 
     stage('Test') {
-      steps { sh 'npm run-script test -- --browsers ChromeHeadless' }
+      steps { sh 'npm run-script test -- --watch=false --browsers ChromeHeadless' }
     }
 
     stage('Build') {
