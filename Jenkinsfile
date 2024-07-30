@@ -8,9 +8,7 @@ pipeline {
     }
 
     stage('Test') {
-      stage('Unit tests') {
-        steps { sh 'ng test --browsers ChromeHeadless' }
-      }
+      steps { sh 'ng test --browsers ChromeHeadless' }
     }
 
     stage('Build') {
