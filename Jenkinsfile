@@ -8,11 +8,11 @@ pipeline {
     }
 
     stage('Test') {
-      steps { sh 'ng test --browsers ChromeHeadless' }
+      steps { sh 'npm run-script test -- --browsers ChromeHeadless' }
     }
 
     stage('Build') {
-      steps { sh 'npm run build' }
+      steps { sh 'npm run-script build' }
     }
   }
 }
