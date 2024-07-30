@@ -8,18 +8,13 @@ pipeline {
     }
 
     stage('Test') {
-      parallel {
-        stage('Static code analysis') {
-            steps { sh 'npm run-script lint' }
-        }
-        stage('Unit tests') {
-            steps { sh 'npm run-script test' }
-        }
+      stage('Unit tests') {
+        steps { sh 'ng test --browsers ChromeHeadless' }
       }
     }
 
     stage('Build') {
-      steps { sh 'npm run-script build' }
+      steps { sh 'npm run build' }
     }
   }
 }

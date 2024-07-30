@@ -1,19 +1,29 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterModule } from '@angular/router';
 
-import { TodoItemComponent } from './todo-item.component';
+import { TodoItemComponentPage } from './todo-item.component';
 
-describe('TodoItemComponent', () => {
-  let component: TodoItemComponent;
-  let fixture: ComponentFixture<TodoItemComponent>;
+class BlankCmp {}
+
+describe('TodoItemComponentPage', () => {
+  let component: TodoItemComponentPage;
+  let fixture: ComponentFixture<TodoItemComponentPage>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TodoItemComponent]
+      imports: [TodoItemComponentPage, HttpClientTestingModule, RouterModule.forRoot(
+        [{path: '', component: BlankCmp}]
+      )]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(TodoItemComponent);
+    fixture = TestBed.createComponent(TodoItemComponentPage);
     component = fixture.componentInstance;
+    component.todo = {
+      title: 'Test',
+      description: 'Test',
+    }
     fixture.detectChanges();
   });
 

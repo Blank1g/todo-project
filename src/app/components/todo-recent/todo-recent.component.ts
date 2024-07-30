@@ -14,7 +14,7 @@ export class TodoRecentComponent {
 
   private router = inject(Router);
 
-  @Input() todo: Todo;
+  @Input() todo!: Todo;
 
   redirect() {
     this.router.navigate(['/todo', this.todo.id]);

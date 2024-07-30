@@ -14,6 +14,10 @@ describe('TodoRecentComponent', () => {
     
     fixture = TestBed.createComponent(TodoRecentComponent);
     component = fixture.componentInstance;
+    component.todo = {
+      title: 'Test',
+      description: 'Test',
+    }
     fixture.detectChanges();
   });
 
