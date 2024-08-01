@@ -90,7 +90,7 @@ Here is small [guide](https://blog.kwal-it.be/how-to-create-an-angular-pipeline-
 > const module1 = require('./module1');
 > module1.functionName1
 > module1.functionName2
-17 What is module wrapper function?
+17. What is module wrapper function?
 > файл, який викликається через команду node app.js (або інший файл), автоматично загортується нодою в самовикликаючу функцію, тому код буде відпрацьовано, коли запуститься файл.
 18. What are the types of modules in Node?
 > a. Core modules (Build-in modules) - модулі по типу fs, path, http і тд.
