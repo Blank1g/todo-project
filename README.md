@@ -59,3 +59,40 @@ Here is small [guide](https://blog.kwal-it.be/how-to-create-an-angular-pipeline-
 9. What are the disatvantages of node? When to use and when not to use Node?
 > використовувати можна для real-time апок, по типу чатів, онлайн ігор, для RESTful апок різних розмірів, для програм з microservice-base architectire де використовуються різні мови, або розбито на різні частини. НЕ ВИКОРИСТОВУВАТИ для важких для CPU задач і проектів, 
 > на приклад Image/Video processing, data encryption/decryption, так як node має 1 потік, а для цих задач потрібно кілька потоків.
+10. How to setup node.js project?
+>  a. download Node
+>  b. download VSCode (any editor)
+>  c. create new folder for project
+>  d. open folder in VSCode
+>  e. run ```npm init -y```
+>  f. create ```app.js``` file
+>  g. run app with command ```node app.js```
+11. What is NPM? What is the role of node_modules folder?
+> node_modules тримає в собі всі залежності проекту, а NPM це менеджер, який менеджить ці залежності.
+12. What is the role of package.json file in Node?
+> файл, який тримає в собі metadata (інформація про проект такі як назва, опис, скріпти і тд) проекту.
+13. What are Modules in Node? What is the difference between a function & module?
+> Модуль містить в собі конкретний функціонал, який можна легко перевикористовувати в застосунку на Node.
+> Модуль це концепт, в якому може бути кілька функцій. Він інкапсулює функції, і містить в собі інструкції для їх використання.
+14. How many ways are there to Export a module?
+> module.exports.functionName = functionName;
+> exports.functionName = function () {};
+15. What will happen if you don't export the module?
+> Якщо не експортнути, то використати назовні не можна.
+16. How to import single and multiple functions from a module?
+> // single:
+> module.export.functionNam
+> const module1 = require('./module1');
+> 
+> // miltiple:
+> module.export.functionName1
+> module.export.functionName2
+> const module1 = require('./module1');
+> module1.functionName1
+> module1.functionName2
+17 What is module wrapper function?
+> файл, який викликається через команду node app.js (або інший файл), автоматично загортується нодою в самовикликаючу функцію, тому код буде відпрацьовано, коли запуститься файл.
+18. What are the types of modules in Node?
+> a. Core modules (Build-in modules) - модулі по типу fs, path, http і тд.
+> b. Local modules - модулі створені людиною.
+> c. Third-Party modules - модулі з ком'юніті, які потрібно завантажити через npm. 
