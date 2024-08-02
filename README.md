@@ -95,4 +95,4 @@ Here is small [guide](https://blog.kwal-it.be/how-to-create-an-angular-pipeline-
 18. What are the types of modules in Node?
 > a. Core modules (Build-in modules) - модулі по типу fs, path, http і тд.
 > b. Local modules - модулі створені людиною.
-> c. Third-Party modules - модулі з ком'юніті, які потрібно завантажити через npm. 
+> c. Third-Party modules - модулі з ком'юніті, які потрібно завантажити через npm.
