@@ -32,6 +32,7 @@ Here is small [guide](https://blog.kwal-it.be/how-to-create-an-angular-pipeline-
 
 ## Node.js Q&A
 
+### Fundamentals
 1. Runtime Environment?
 > environment, який відповідальний за менеджмент зберігання і конвертування high level мови таких як JavaScript, C#, Java і тд.
 2. What is Node.js?
@@ -96,3 +97,11 @@ Here is small [guide](https://blog.kwal-it.be/how-to-create-an-angular-pipeline-
 > a. Core modules (Build-in modules) - модулі по типу fs, path, http і тд.
 > b. Local modules - модулі створені людиною.
 > c. Third-Party modules - модулі з ком'юніті, які потрібно завантажити через npm.
+19. What are TOP 5 build in modules commonly used in node projects?
+> a. fs - модуль для керування файлами (зберігання, редагування, видалення і тд) з такими функціями як writeFile, readFile, mkDir і тд.
+> b. path - модуль для керування шляхом до файлів у вигляді стрінги, нормалізування, парсинг і тд. 
+> c. os - модуль з методами для отримання інформації по системі. 
+> d. events - модуль для керування, реагування на івенти ноди, з модуля ми отримуємо EventEmitter, після чого можемо слухати на наш кастомний івент в методі ```on```, викликати цей івент через ```emit``` метод, в цей івент можна передавати аргументи.
+> e. http - модуль для створення сервера, який слухає порт сервера, і дає респонс клієнту. ```createServer``` метод цього модуля створює сервер.
+
+### Express
