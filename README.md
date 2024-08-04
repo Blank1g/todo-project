@@ -46,40 +46,28 @@ Here is small [guide](https://blog.kwal-it.be/how-to-create-an-angular-pipeline-
 6. What are the differences between Client-Side(browser) & Server-side(Node.js)
 > різні runtime environment. Клієнт використовує додатково HTML та CSS, браузер використовує document, window, navigator і event object. Request, response, server, database object використовується на серверній стороні. Різні відповідальності, клієнт відображає, сервер > > працює з даними і тд.
 7. What are the 7 Main Features of Node.js?
->   a. Single Threaded - один потік, не може використовувати кілька завдань одночасно. Багатопоточне програмування - потоки відкриваються в залежності від кількості задач (2-3 задачи = 2-3 потока), є більше навантаження на CPU, може відбутися deadlock, якщо не правильно > хендлити потоки.
-
+>   a. Single Threaded - один потік, не може використовувати кілька завдань одночасно. Багатопоточне програмування - потоки відкриваються в залежності від кількості задач (2-3 задачи = 2-3 потока), є більше навантаження на CPU, може відбутися deadlock, якщо не правильно > хендлити потоки. <br />
 >   b. Asynchronous - синхронне програмування - чекає на закінчення одної, щоб почати наступну. Асинхронність - поток ініціює виконання завдання, після чого переходить на ініціалізацію наступного не чикаючи на закінчення попереднього. Node має івенти, тому івент 
-> викликається коли закінчується виконання функції і її результат йде відразу в потік першим пріорітетом.
-
+> викликається коли закінчується виконання функції і її результат йде відразу в потік першим пріорітетом. <br />
 >   c. Event-Driven (Events, Event Emitter, Event Queue, Event Loop) - EVENT EMITTER це місце з якого йде сигнал (по типу кліку, або закінчення виконання функції і тд), вони прокидують івент в EVENT QUEUE з якої Node буде брати по одному івенту, який буде відправлений в
-> EVENT HANDLER, який є нашим кодом для реагування на цей івент, весь цей процес називається EVENT LOOP. Event-Driven architecture - це всі ці поняття об'єднанні.
-
->   d. V8 JavaScript engine
-
->   e. Cross-Platform - можна використовувати на майже любій платформі (os)
-
->   f. NPM
-
->   g. Real-Time Capabilities
+> EVENT HANDLER, який є нашим кодом для реагування на цей івент, весь цей процес називається EVENT LOOP. Event-Driven architecture - це всі ці поняття об'єднанні. <br />
+>   d. V8 JavaScript engine <br />
+>   e. Cross-Platform - можна використовувати на майже любій платформі (os) <br />
+>   f. NPM <br />
+>   g. Real-Time Capabilities <br />
 8. What are the main features & advantages of Node.js?
 > фічі, які позначені вище, і те що вони дають при написанні на Node.js. Використовує JavaScript як і клієнт.\
 9. What are the disatvantages of node? When to use and when not to use Node?
 > використовувати можна для real-time апок, по типу чатів, онлайн ігор, для RESTful апок різних розмірів, для програм з microservice-base architectire де використовуються різні мови, або розбито на різні частини. НЕ ВИКОРИСТОВУВАТИ для важких для CPU задач і проектів, 
 > на приклад Image/Video processing, data encryption/decryption, так як node має 1 потік, а для цих задач потрібно кілька потоків.
 10. How to setup node.js project?
->  a. download Node
-
->  b. download VSCode (any editor)
-
->  c. create new folder for project
-
->  d. open folder in VSCode
-
->  e. run ```npm init -y```
-
->  f. create ```app.js``` file
-
->  g. run app with command ```node app.js```
+>  a. download Node <br />
+>  b. download VSCode (any editor) <br />
+>  c. create new folder for project <br />
+>  d. open folder in VSCode <br />
+>  e. run ```npm init -y``` <br />
+>  f. create ```app.js``` file <br />
+>  g. run app with command ```node app.js``` <br />
 11. What is NPM? What is the role of node_modules folder?
 > node_modules тримає в собі всі залежності проекту, а NPM це менеджер, який менеджить ці залежності.
 12. What is the role of package.json file in Node?
@@ -106,20 +94,16 @@ Here is small [guide](https://blog.kwal-it.be/how-to-create-an-angular-pipeline-
 17. What is module wrapper function?
 > файл, який викликається через команду node app.js (або інший файл), автоматично загортується нодою в самовикликаючу функцію, тому код буде відпрацьовано, коли запуститься файл.
 18. What are the types of modules in Node?
->  a. Core modules (Build-in modules) - модулі по типу fs, path, http і тд.
-
->  b. Local modules - модулі створені людиною.
-
->  c. Third-Party modules - модулі з ком'юніті, які потрібно завантажити через npm.
+>  a. Core modules (Build-in modules) - модулі по типу fs, path, http і тд. <br />
+>  b. Local modules - модулі створені людиною. <br /> 
+>  c. Third-Party modules - модулі з ком'юніті, які потрібно завантажити через npm. <br />
 19. What are TOP 5 build in modules commonly used in node projects?
->  a. fs - модуль для керування файлами (зберігання, редагування, видалення і тд) з такими функціями як writeFile, readFile, mkDir і тд.
-
->  b. path - модуль для керування шляхом до файлів у вигляді стрінги, нормалізування, парсинг і тд. 
-
->  c. os - модуль з методами для отримання інформації по системі. 
-
->  d. events - модуль для керування, реагування на івенти ноди, з модуля ми отримуємо EventEmitter, після чого можемо слухати на наш кастомний івент в методі ```on```, викликати цей івент через ```emit``` метод, в цей івент можна передавати аргументи.
-
->  e. http - модуль для створення сервера, який слухає порт сервера, і дає респонс клієнту. ```createServer``` метод цього модуля створює сервер.
+>  a. fs - модуль для керування файлами (зберігання, редагування, видалення і тд) з такими функціями як writeFile, readFile, mkDir і тд. <br />
+>  b. path - модуль для керування шляхом до файлів у вигляді стрінги, нормалізування, парсинг і тд.  <br />
+>  c. os - модуль з методами для отримання інформації по системі.  <br />
+>  d. events - модуль для керування, реагування на івенти ноди, з модуля ми отримуємо EventEmitter, після чого можемо слухати на наш кастомний івент в методі ```on```, викликати цей івент через ```emit``` метод, в цей івент можна передавати аргументи. <br />
+>  e. http - модуль для створення сервера, який слухає порт сервера, і дає респонс клієнту. ```createServer``` метод цього модуля створює сервер. <br />
 
 ### Express
+
+20. 
