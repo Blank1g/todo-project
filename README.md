@@ -83,8 +83,7 @@ Here is small [guide](https://blog.kwal-it.be/how-to-create-an-angular-pipeline-
 16. How to import single and multiple functions from a module?
 > // single:
 > module.export.functionNam
-> const module1 = require('./module1');
-> 
+> const module1 = require('./module1');  <br />
 > // miltiple:
 > module.export.functionName1
 > module.export.functionName2
@@ -106,4 +105,35 @@ Here is small [guide](https://blog.kwal-it.be/how-to-create-an-angular-pipeline-
 
 ### Express
 
-20. 
+20. What are the advantage of using Express.js with Node.js?
+> a. Спрощення розробки через готові рішення які він надає  <br />
+> b. Middleware support  <br />
+> c. Гнучка навігація  <br />
+> d. Template engine integration - можна писати темплейт на стороні серверу.  <br />
+21. How to create an HTTP Server using Express.js?
+> Використовуючи ```express()``` з бібліотеки express, після чого викликаєтьмя ```listen``` з потрібним портом.
+22. What is Middleware in Express.js and when to use them?
+> Middleware (проміжне програмне забезпечення) - яке є функцією, яка виконує конкретну роботу. Наприклад Middleware 1 - це Request Logging метод, далі Middleware 2 - це Authentication, Middleware 3 - це CORS і після того, як вони пройдуть всі, тоді відбудеться
+> GET/POST/PUT/DELETE і response піде назад до клієнта від сервера. Також всі ці middleware  разом називаються REquest Pipeline.
+23. How do you implement middleware in Express.js?
+> Створюється апка через express(), після чого оголошується метод з (req, res, next), де next має викликатися в кінці логіки цієї функції. Через app.use(назва нашої функції), для того, щоб код виконався в апці, коли вона запуститься.
+24. What is the purpose of the app.use() function in Express.js?
+> Метод use використовується, для того, щоб викливати middleware глобально для всіх запитів
+25. What is the purpose of the next parameter in Express.js?
+> next параметр це функція, яка викликається в кінці Middleware, для того, щоб наступний Middleware міг відпрацювати
+26. How to use middleware globally for a specific route?
+> Щоб middleware відпрацював для конкретного шляху, потрібно додати цей шлях в use метод - app.use('/example', middleware);
+27. What is Request Pipeline in Express?
+> Це серія middleware, які проходять перед тим, як відбудеться GET/POST/PUT/DELETE запит на сервері
+28. What are the Types of middleware's in Express.js?
+> a. Application-level middleware - глобально використовується для ВСІХ запитів.  <br />
+> b. Router-level middleware - викликається тільки для конкретного шляху.  <br />
+> c. Error-handling middleware - використовує параметер err в use методі (app.use((err, req, res, next) => {})), потрібен для опрацювання помилок. ОБОВ'ЯЗКОВО ДОДАВАТИ В КІНЦІ ВСІХ middleware <br />
+> d. Build-in middleware - express має свої методи, які можна викоирстовувати як middleware, наприклад керування статичними файлами через express.static('public') - після чого можна доступатися по шляху - де він є назвою шляху. <br />
+> e. Third-party middleware - методи, які завантаженні від ком'юніті і тд. (bodyParser.json(), helmet() і тд.) <br />
+29. What are the advantages of using middleware in Express.js?
+> a. Modularity - middleware як модулі, якими можна розбити на модулі апку. <br />
+> b. Reusability - можна перевикористовувати. <br />
+> c. Improve Request Handling - простіше хендлити request/response. <br />
+> d. Flexible Control Flow - можна визначати, для якого шляху він буде використовуватися. <br />
+> e. Third-party Middleware's - можна спростити життя, використовуючи зовнішні методи, написані ком'юніті. <br />
