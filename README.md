@@ -137,3 +137,26 @@ Here is small [guide](https://blog.kwal-it.be/how-to-create-an-angular-pipeline-
 > c. Improve Request Handling - простіше хендлити request/response. <br />
 > d. Flexible Control Flow - можна визначати, для якого шляху він буде використовуватися. <br />
 > e. Third-party Middleware's - можна спростити життя, використовуючи зовнішні методи, написані ком'юніті. <br />
+30. What is Routing is Express.js?
+> Навігація по проекту, яка відбувається за різними принципами, такими як REST, GraphQL, Soap і тд.
+> Залежно від того, який йде запит, на такий контроллер посилає відпрацювання даних раутинг в експресі
+31. What is the difference between middleware & routing in Express?
+> Мідлвер - це метод який відпрацьовує якусь логіку, раутинг - це процес який перенеправляє запит на відповідний метод де він буде опрацьований.
+32. How to implement routing? How do you define routes in Express.js?
+> Створюється app.get в якому першим параметром передається шлях, залежно від якого буде робитися запит.
+33. How to handle Routing in Express.js real application?
+> Зазвичай імпортується контролер, для того, щоб залежно від шляху перенаправляти запит одразу в контроллер, в якому він має бути опрацьований. (app.get('/orders', ordersController.getOrders));
+34. What are Route Handlers?
+> Це другий параметр в app.get('/', (req, res) => {}) - по суті це просто колбек функція.
+35. What are Router Parameters in Express.js?
+> Це перший параметр в app.get('/', (req, res) => {}) - шлях за яким викличеться колбек.
+36. What are Router object & Router Methods and how to implement them?
+> Об'єкти маршрутизації - це router = express.Router() <br />
+> Методи маршрутизації - це метод get в router.get('/', (req, res) => {}) <br />
+> цей об'єкт можна експортувати та використати в app.use('/api', router);
+37. What is express.Router() in Express.js?
+> Клас, який повертає об'єкт router.
+38. What is Route Chaining is Express.js?
+> Можливість викликати кілька методів (middlewares не колбек метод), по одному шляху.
+39. What is Route Nesting in Express.js?
+> Вкладеність шлаху, наприклад /product/feature і /products/ratings, де products - це спільний префікс, а feature і ratings це вкладені шляхи.
