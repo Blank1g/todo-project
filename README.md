@@ -160,3 +160,30 @@ Here is small [guide](https://blog.kwal-it.be/how-to-create-an-angular-pipeline-
 > Можливість викликати кілька методів (middlewares не колбек метод), по одному шляху.
 39. What is Route Nesting in Express.js?
 > Вкладеність шлаху, наприклад /product/feature і /products/ratings, де products - це спільний префікс, а feature і ratings це вкладені шляхи.
+40. What are Template Engines in Express.js?
+> Це бібліотеки, які дають змогу генерувати HTML контент з данними на бекенді
+41. Name some Template Engines libraries?
+> EJS, Handlebars, Pub, Mustache, Nunjucks.
+42. How to implement EJS template engine is a Express.js application?
+> Встановити ejx => створити ```index.ejs``` => написати в цьому файлі HTML по принципу ejs => додати view engine в ```app.js``` через ```app.set('view engine', 'ejs')``` => ```app.set('views', path.join(__dirname, 'views'))``` => ```app.get('/' (req, res) => { res.render('index'), { data: data } })```
+
+### REST API
+
+43. What is REST & RESTful API?
+>  Архітектульний дизайн (набір правил), який використовується для написання API. RESTful означає, що певна API використовує правила і принципи, які використовуються в REST
+44. What are HTTP Request and Response structures in UI and REST API?
+> Приклад скруктури запиту POST: "POST /api/user/create, HTTP/1.1, Host: api-server.expmple.com, uid=john&password=123, // Header, conten-type.." <br />
+> Приклад відповіді: "HTTP/1.1 201 Created, Content-Type: application/json, { "userId": 123, "message": "User created" }"
+45. What are Top 5 REST guidelines and the advantage of them?
+> a. Separation of Client and Server - означає, що клієнт і сервер мають бути створено окремо і мають бути незалежними, тому REST не може бути монолітним проектом де template не має бути на стороні серверу <br />
+> b. Stateless - сервер не повинен зберігати нічого про запит, сервер може читати запити і відповідати на них, але нічого не зберігати наприклад не зберігати сесію <br />
+> c. Uniform interface - кожен url в цій API має репрезентувати собою унікальний сервіс цього API. Наприклад ```abc.com/shoes``` - повинен відповідати тільки за логіку shoes і тд. <br />
+> d. Cachable - можна кешувати запит, якщо відправляється однаковий кілька разів. <br />
+> e. Layered system - повинен наслідувати систему MVC або іншого модульного принципу, що означає, що API має бути розбина на різні модулі, кожен з яких відповідає за свою фічу. <br />
+46. What is the difference between REST API and SOAP API
+> a. REST API - архітектурний стиль написання, SOAP API - протокол. <br />
+> b. REST API - використовує HTTP або HTTPS, SOAP API - може використовувати різні протоколи, наприклад HTTP, SMTP etc. <br />
+> c. REST API - stateless, SOAP API - може бути як stateful так і stateless. <br />
+> d. REST API - покладається на HTTP статус коди по типу 200, 201, 404 і тд., SOAP API - сама визначає свій механізм помилок. <br />
+> e. REST API - менша і швидша, SOAP API - може бути повільнішою через обробку XML. <br />
+    
