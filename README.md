@@ -241,10 +241,10 @@ Here is small [guide](https://blog.kwal-it.be/how-to-create-an-angular-pipeline-
 
 65. What is Error Handling? In how many ways you can do error handling in Node.js?
 > Процес аналізу, реагування, опрацювання помилок, які відбуваються. <br />
-> Try-Catch (sync) - ![image](https://github.com/user-attachments/assets/e92aff8b-d7da-44c5-8758-386e925fe354) <br />
-> Error-First Callbacks (async) - ![image](https://github.com/user-attachments/assets/6a1a0cb4-26ce-4723-a8f3-b8c8e5e2a784) <br />
-> Promises (async) - через catch block ![image](https://github.com/user-attachments/assets/36648ed0-4725-4418-956e-e671a0b9413f) <br />
-> Try-Catch with async-await (async) - the most popular ![image](https://github.com/user-attachments/assets/4719213e-eec6-468a-bc2b-5318196335de)
+> Try-Catch (sync) <br /> ![image](https://github.com/user-attachments/assets/e92aff8b-d7da-44c5-8758-386e925fe354) <br />
+> Error-First Callbacks (async) <br /> ![image](https://github.com/user-attachments/assets/6a1a0cb4-26ce-4723-a8f3-b8c8e5e2a784) <br />
+> Promises (async) - через catch block <br /> ![image](https://github.com/user-attachments/assets/36648ed0-4725-4418-956e-e671a0b9413f) <br />
+> Try-Catch with async-await (async) - the most popular <br /> ![image](https://github.com/user-attachments/assets/4719213e-eec6-468a-bc2b-5318196335de)
 66. How can you Debug Node.js application?
 > console.log() <br />
 > debugger statement <br />
