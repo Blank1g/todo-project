@@ -186,4 +186,68 @@ Here is small [guide](https://blog.kwal-it.be/how-to-create-an-angular-pipeline-
 > c. REST API - stateless, SOAP API - може бути як stateful так і stateless. <br />
 > d. REST API - покладається на HTTP статус коди по типу 200, 201, 404 і тд., SOAP API - сама визначає свій механізм помилок. <br />
 > e. REST API - менша і швидша, SOAP API - може бути повільнішою через обробку XML. <br />
-    
+47. What are HTTP Verbs and HTTP methods?
+> це GET/POST/PUT/DELETE/PATCH методи \
+48. Що таке GET, POST, PUT & DELETE HTTP methods?
+> GET - отримання з сервісу, можна передивати id в запит через шлях. <br />
+> POST - відправлення даних для з конкретною метою, має request body.  <br />
+> PUT - оновлення або створення ресурсу, якщо його не існує, має request body.  <br />
+> DELETE - видалення ресурсу, request body - опціональний, id передається через url.  <br />
+49. What is the difference between PUT & PATCH methods?
+> Обидва потрібні для оновлення або зміни існуючих даних. PUT - має мати всі поля не залежно від того, чи їх потрібно змінити. PATCH - відправляє тільки ті поля, які потрібно змінити.
+50. Explain the concept of Idempotence in RESTful APIs.
+> GET запит з однаковим url має завжди повертати одні і ті ж данні. Результати кожного запиту мають бути однаковими для GET PUT DELETE, тим часом POST не є таким, так як постійно може створювати різні інстанси.
+51. What are the role of status codes in RESTful APIs?
+> Відповідають за інформацію про те, як пройшов запит, де 1xx (інформаційний), 2xx (успіх), 3хх (зміна шляху), 4хх (проблема зі сторони клієнта), 5хх (проблема зі сторони сервера).
+52. What is CORS in RESTful APIs?
+> Секюріті фіча, яка використовується браузером. <br />
+> CROSS ORIGIN WEB SHARING - це захист для того, щоб інші ресурси не могли доступатися, до зовнішніх ресурсів, наприклад ```http://my-project.com/index.html``` може обмінюватися даними з ```http://my-project.com/getdata```, але не може обмінюватися з ```http://external.com/getdata``` <br />
+> Сабдомени по типу ```http://api.my-project.com/getdata``` також заборонені. <br />
+> HTTPS ```https://my-project.com/getdata``` також заборонений по дефолту. <br />
+> Якщо різні порти ```http://my-project.com:12/getdata``` також заборонено по дефолту. <br />
+53. How to remove CORS restrictions RESTful APIs?
+> Ми можемо забрати CORS заборони використовуючи ```app.use(cors())``` де ```cors()```це бібліотека. Це можна зробити як для конкретних ресурсів, так і відразу для всіх.
+54. What are Serialization & Deserialization?
+> У нас є REST API 1 і REST API 2, нам потрібно ділитися даними між ними, тоді ми використовуємо концепт Serialization & Deserialization, який означає форматування даних в одному api з Object в json, відправка через network в другу api і конвертація назад з json в Object. це потрібно через те, що різні API можуть бути написані на різних технологіях, щось на JavaScript інша на C# і тд.
+55. What are the types of serialization?
+> Binary Serialization <br />
+> XML Serialization <br />
+> JSON Serialzation
+56. Explain the concept of versioning in RESTful APIs.
+> Версії потрібні для того, щоб була можливість мати стабільний продукт без зміни версії, якщо покращення, зміни нових версій не потрібні клієнту.
+57. What is an API document? What are the popular documentation formats?
+> API document - це як swagger, документ, який може бути різних форматів, де показані усі запити, які присутні на конкретному API.
+58. What is the typical structure of a REST API project in Node?
+> ![image](https://github.com/user-attachments/assets/20e7f010-2273-4e62-993c-64089017d21c)
+59. What are Authentication and Authorization?
+> Authentication - процес логінізації, веріфікації користувача, за якимись ознаками для надання доступу до програми, яке перевіряється через базу <br />
+> Authorization - процес надання доступ до різних фіч через визначення ролі користувача.
+60. What are the types of authentication in Node.js?
+> Basic (username and password) - данні користувача передаються через логін і пароль, але передаються як текст в network, де вони не є закодовані, тому це не дуже сек'юрно <br />
+> API Key - використовуючи ApiKey з ключем в значені, який ми додаємо для кожного запиту в Header. Проблема в тому, що ключ може бути поширений між користувачами, тому контролювати хто доступається не вийде в такому випадку. <br />
+> Token-based (JWT) - найпопулярніший варіант, використовується JSON WEB TOKEN, який зберігається в Cookies зі сторони серверу після вдалої веріфікації користувача. Цей токен додається до кожного наступного запиту сервера. Токен має свою сесію, тому може закінчитися через якийсь час. Токен передається в Header запитів (Authorization: Bearer 'JWT TOKEN'). Токен перевіряється щоразу на стороні сервера на валідність. Закодований токен з допомогою секретного слова. <br />
+> Multi-factor (MFA) <br />
+> Certificate-based <br />
+61. What are the security risks associated with storing passwords in plain text in Node.js?
+> Зберігання пароля у вигляді звичайного тексту ризиковано, через те, що всі хто може доступитися до усіх паролів, буде мати доступ до цих акаунтів.
+62. What is the role of Hashing and Salt in securing passwords?
+> Hashing - алгоритми за якими можна закодовувати текст (наприклад пароль). Salt - це рандомна стрінга, яка генерується через бібліотеку bcrypt. Об'єднавши Salt та Hashing можна краще закодувати пароль.
+63. How can we create Hash Password in Node.js?
+> ![image](https://github.com/user-attachments/assets/e14bf538-b321-49f2-b6d4-144ab72e33f1)
+64. What are the parts of JWT token?
+> Токен є об'єктом, який закодований, тому може містити в собі будь-які дані. Також може бути налаштований, щоб мати сесію.
+
+### Random NODE questions
+
+65. What is Error Handling? In how many ways you can do error handling in Node.js?
+> Процес аналізу, реагування, опрацювання помилок, які відбуваються. <br />
+> Try-Catch (sync) - ![image](https://github.com/user-attachments/assets/e92aff8b-d7da-44c5-8758-386e925fe354) <br />
+> Error-First Callbacks (async) - ![image](https://github.com/user-attachments/assets/6a1a0cb4-26ce-4723-a8f3-b8c8e5e2a784) <br />
+> Promises (async) - через catch block ![image](https://github.com/user-attachments/assets/36648ed0-4725-4418-956e-e671a0b9413f) <br />
+> Try-Catch with async-await (async) - the most popular ![image](https://github.com/user-attachments/assets/4719213e-eec6-468a-bc2b-5318196335de)
+66. How can you Debug Node.js application?
+> console.log() <br />
+> debugger statement <br />
+> Node.js inspector <br />
+> Visual Studio Code debugger <br />
+> Chrome DevTools
