@@ -251,5 +251,8 @@ Here is small [guide](https://blog.kwal-it.be/how-to-create-an-angular-pipeline-
 > Node.js inspector <br />
 > Visual Studio Code debugger <br />
 > Chrome DevTools
+67. process.nextTick() vs setImmediate().
+> - process.nextTick() schedules a callback to be invoked in the same phase of the event loop, before the next I/O operation. <br />
+> - setImmediate() schedules a callback to be invoked in the next iteration of the event loop, after I/O operations. <br />
 
 Preparing with help of the [Node JS Interview Masterclass: Top 200 Questions](https://www.udemy.com/course/node-js-interview-masterclass-top-200-questions-with-pdf/?couponCode=ST10MT8624)
