@@ -253,6 +253,8 @@ Here is small [guide](https://blog.kwal-it.be/how-to-create-an-angular-pipeline-
 > Chrome DevTools
 67. process.nextTick() vs setImmediate().
 > - process.nextTick() schedules a callback to be invoked in the same phase of the event loop, before the next I/O operation. <br />
-> - setImmediate() schedules a callback to be invoked in the next iteration of the event loop, after I/O operations. <br />
+> - setImmediate() schedules a callback to be invoked in the next iteration of the event loop, after I/O operations. <br />\
+68. Clustering?
+>   Clustering in Node.js involves creating multiple worker processes that share the incoming workload. Each worker process runs in its own event loop, utilizing the available CPU cores. The master process manages the worker processes, distributes incoming requests, and handles process failures.
 
 Preparing with help of the [Node JS Interview Masterclass: Top 200 Questions](https://www.udemy.com/course/node-js-interview-masterclass-top-200-questions-with-pdf/?couponCode=ST10MT8624)
