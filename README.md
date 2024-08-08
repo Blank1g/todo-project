@@ -251,3 +251,5 @@ Here is small [guide](https://blog.kwal-it.be/how-to-create-an-angular-pipeline-
 > Node.js inspector <br />
 > Visual Studio Code debugger <br />
 > Chrome DevTools
+
+Preparing with help of the [Node JS Interview Masterclass: Top 200 Questions](https://www.udemy.com/course/node-js-interview-masterclass-top-200-questions-with-pdf/?couponCode=ST10MT8624)
