@@ -258,3 +258,10 @@ Here is small [guide](https://blog.kwal-it.be/how-to-create-an-angular-pipeline-
 >   Clustering in Node.js involves creating multiple worker processes that share the incoming workload. Each worker process runs in its own event loop, utilizing the available CPU cores. The master process manages the worker processes, distributes incoming requests, and handles process failures.
 
 Preparing with help of the [Node JS Interview Masterclass: Top 200 Questions](https://www.udemy.com/course/node-js-interview-masterclass-top-200-questions-with-pdf/?couponCode=ST10MT8624)
+
+Need to focus more on:
+1. Strems and files
+2. NPM details
+3. How HTTP works under the hood
+4. CAP theory
+5. What is mock and stab for testing?
