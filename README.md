@@ -9,7 +9,7 @@ npm start
 ## PostgreSQL and Redis
 Also you need to run your PostgreSQL and Redis on default port
 
-## Docker
+## Docker 
 To run docker you need to create images for client and server like this:
 ```
 docker build -t todo-server . (you need to be located in the server folder)
