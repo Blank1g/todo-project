@@ -260,8 +260,27 @@ Here is small [guide](https://blog.kwal-it.be/how-to-create-an-angular-pipeline-
 Preparing with help of the [Node JS Interview Masterclass: Top 200 Questions](https://www.udemy.com/course/node-js-interview-masterclass-top-200-questions-with-pdf/?couponCode=ST10MT8624)
 
 Need to focus more on:
-1. Strems and files
-2. NPM details
-3. How HTTP works under the hood
-4. CAP theory
+1. Streams and files:
+> Стріми потрібні для читання і запису файлів в Node.js. <br />
+> Стрім - це колекція даних, схоже на масив чи об'єкт. Їх відмінність полягає в тому, що вони не обов'язково мають поміщатися в пам'ять, так як читання великих об'ємів даних в стрімах відбувається частинами (чанками). Також окрім роботи з великими даними, ми можемо працювати водночас з різними файлами, наприклад з допомогою методу ```.pipe``` (readableSrc.pipe(writableDest)) прочитати інформацію одного файлу і записати її в інший  <br />
+> Існує 4 фундаментальні типи стрімів: <br />
+> a. readable - стрім абстракції з якої читаються дані  <br />
+> b. writable - стрім абстракції в яку дані будуть записуватися <br />
+> c. duplex - одночасно readable і writable, прикладом якого є TCP сокет. <br />
+> d. transform - той самий дуплекс, але в ньому можна трансформувати дані, які читаються або записуються <br />
+> Метод ```pipe``` можна чейнити, так як він повертає місце куди будуть записані дані  <br />
+> ![image](https://github.com/user-attachments/assets/2b6ae78c-2950-4cd0-9d37-0e26ecf412f8)
+> Важливі івенти - це drain - який показує, що writable срім може отримати ще данні. finish - який показує, що усі дані було скинуто у систему. <br />
+> Як написати свій writable стрім: <br />
+> ![image](https://github.com/user-attachments/assets/bb5f8bb8-b6bb-428a-869c-309380e624a3) <br />
+> Як написати свій readable стрім: <br />
+> ![image](https://github.com/user-attachments/assets/ad7e1f47-d77f-4db7-8c12-b8cb30a37ae2) <br />
+> Як написати свій duplex/transform стрім: <br />
+> ![image](https://github.com/user-attachments/assets/3bf42a35-8136-4ba9-b36f-75c80e311248) <br />
+> [Cтаття зі всіма деталями](https://www.freecodecamp.org/news/node-js-streams-everything-you-need-to-know-c9141306be93/)
+
+3. How HTTP works under the hood (TCP)
+4. NPM details
 5. What is mock and stab for testing?
+6. CAP theory
+7. Event Loop all small details (всі класи в node наслідують клас EventEmitter)
