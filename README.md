@@ -295,8 +295,7 @@ Need to focus more on:
 > HTTP method, URL (Uniform Resource Locator), HTTP version, Headers, Body (optional) <br />
 > HTTP methods -  GET, POST, DELETE, PUT, PATCH. <br />
 > URL (https://learning.postman.com/docs/introduction/overview/#getting-started) - Scheme: https, Domain: learning.postman.com, Path: /docs/introduction/overview, Anchor: #getting-started. <br />
-> HTTP version - Версія HTTP вказує на версію використовуваного протоколу HTTP, наприклад HTTP/1.1 або HTTP/2. Основна відмінність між HTTP/1.1 і HTTP/2 полягає в тому, що HTTP/2 використовує мультиплексування та стиснення заголовків для значного підвищення ефективності та швидкості завантаження веб-сторінки порівняно зі старішою, більш лінійною моделлю запитів/відповідей HTTP/1.1. Мультиплексування дозволяє браузерам надсилати кілька запитів через одне HTTP-з’єднання та отримувати відповіді саме в такому порядку. <br />
-> Headers: <br />
+> HTTP version - Версія HTTP вказує на версію використовуваного протоколу HTTP, наприклад HTTP/1.1 або HTTP/2. <br />
 > a. Host: Specifies the domain name of the server to which the request is sent. <br />
 > b. User-Agent: Provides information about the client’s web browser or application. <br />
 > c. Accept: Indicates the types of content the client can accept. <br />
