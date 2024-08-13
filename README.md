@@ -280,7 +280,46 @@ Need to focus more on:
 > [Cтаття зі всіма деталями](https://www.freecodecamp.org/news/node-js-streams-everything-you-need-to-know-c9141306be93/)
 
 3. How HTTP works under the hood (TCP)
-4. NPM details
-5. What is mock and stab for testing?
-6. CAP theory
-7. Event Loop all small details (всі класи в node наслідують клас EventEmitter)
+> HTTP (Hypertext Transfer Protocol) - це набір правил, який визнчає, як саме транспортуєються дані між клієнтом та сервером. Клієнт ініціює обмін даними викликаючи HTTP запит, в той час коли сервер отримує, опрацьовує цей запит і відправлвє відповідь клієнту. <br />
+> HTTP - це протокол обміну даних, який працює через з'єднання TCP (є одним із основних протоколів набору протоколів Інтернету. Він виник у початковій реалізації мережі, в якій він доповнював Інтернет-протокол (IP)).  <br />
+
+> HTTP має такі процеси як: <br />
+> a. Request - коли користувач вводить в url лінку, тоді браузер створює HTTP запит, цей запит має в собі інформацію про ресурс, який ви хочете отримати. <br />
+> b. Response - процес в якому сервер генерує відповідь на запит від клієнту, де є дані, метадані, помилки. <br />
+> c. Data transfer - сервер передає відповідь назад клієнту (тобто вашому веб-браузеру) через Інтернет за допомогою протоколу HTTP. <br />
+> d. Rendering - веб-браузер інтерпретує отримані дані та відображає їх на екрані, відображаючи веб-сторінку або вміст за призначенням. <br />
+
+> Під капотом клієнт може надсилати HTTP-запит, відкриваючи TCP-з’єднання з сервером. Після встановлення з’єднання клієнт може надіслати HTTP-повідомлення через відкрите з’єднання. Повідомлення містить метод запиту, заголовки запиту, хост та будь-яку іншу відповідну інформацію. Коли сервер завершує обробку запиту, він надсилає відповідь HTTP через з’єднання TCP із запитаними даними та відповідними метаданими. <br />
+
+> What is included in an HTTP request? <br />
+> HTTP method, URL (Uniform Resource Locator), HTTP version, Headers, Body (optional) <br />
+> HTTP methods -  GET, POST, DELETE, PUT, PATCH. <br />
+> URL (https://learning.postman.com/docs/introduction/overview/#getting-started) - Scheme: https, Domain: learning.postman.com, Path: /docs/introduction/overview, Anchor: #getting-started. <br />
+> HTTP version - Версія HTTP вказує на версію використовуваного протоколу HTTP, наприклад HTTP/1.1 або HTTP/2. Основна відмінність між HTTP/1.1 і HTTP/2 полягає в тому, що HTTP/2 використовує мультиплексування та стиснення заголовків для значного підвищення ефективності та швидкості завантаження веб-сторінки порівняно зі старішою, більш лінійною моделлю запитів/відповідей HTTP/1.1. Мультиплексування дозволяє браузерам надсилати кілька запитів через одне HTTP-з’єднання та отримувати відповіді саме в такому порядку. <br />
+> Headers: <br />
+> a. Host: Specifies the domain name of the server to which the request is sent. <br />
+> b. User-Agent: Provides information about the client’s web browser or application. <br />
+> c. Accept: Indicates the types of content the client can accept. <br />
+> d. Accept-Language: Specifies the client’s preferred languages for content. <br />
+> e. Connection: Specifies how the connection between the client and server should be managed. <br />
+> Body - дані у форматі JSON, XML або form data <br />
+
+> What is included in an HTTP response? <br />
+> HTTP status code (1xx, 2xx, 3xx, 4xx, 5xx), Response headers, Body <br />
+
+> What are the different API architectural patterns that use HTTP? <br />
+> HTTP викистовує такі патерни, як REST, GraphQL, SOAP.
+
+> HTTP/1.1 vs HTTP/2: <br />
+> a. Multiplexing: HTTP/1.1 - запити оборобляються послідовно, означає те, що наступний запит чекає на закінчення попереднього HTTP/2 - кілька запитів одночасно може опрацьовуватися одночасно (паралельно) на одному з'єднанні. <br />
+> b. Header compression: HTTP/1.1 - хедери відправляються як чистий текст HTTP/2 - хедери компресуються, що зменшує їх розмір, реалізовано через технологію HPACK. <br />
+> c. Prioritization: HTTP/1.1 - немає нативного механізму приорітизації запитів HTTP/2 - можна пріорітезувати запити. <br />
+> d. Server push: HTTP/1.1 - його немає HTTP/2 - сервер може надсилати ресурси клієнту до того, як клієнт запитує їх. <br />
+> e. Connection management: HTTP/1.1 - потребує кілька з'єднань, для того щоб завантажити різні ресурси з серверу. HTTP/2 - Кілька запитів і відповідей можна мультиплексувати через одне з’єднання, зменшуючи накладні витрати, пов’язані зі встановленням кількох з’єднань. <br />  
+
+> [Стаття зі всіма деталями](https://blog.postman.com/what-is-http/)
+
+5. NPM details
+6. What is mock and stab for testing?
+7. CAP theory
+8. Event Loop all small details (всі класи в node наслідують клас EventEmitter)
