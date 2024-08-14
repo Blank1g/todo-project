@@ -318,7 +318,10 @@ Need to focus more on:
 
 > [Стаття зі всіма деталями](https://blog.postman.com/what-is-http/)
 
-5. NPM details
-6. What is mock and stab for testing?
-7. CAP theory
-8. Event Loop all small details (всі класи в node наслідують клас EventEmitter)
+5. What is mock and stub for testing?
+> a. Stub - актор, який заміняє тілки малу частину функціоналу, який потрібно протестувати, наприклад тільки один з методів класу. Приклад такого ми можемо побачити тоді коли вішаємо spy на метод об'єкту, та переписуємо його функціонал для спрощення отримання результату.  <br />
+> b. Mock - може бути набагато більшим за stub, так як може повторювати функціонал всього модуля, об'єкта і так далі, а також перевіряти різну поведінку взаємодії з тим об'єктом, який він повторює. <br />
+
+7. NPM details
+8. CAP theory
+9. Event Loop all small details (всі класи в node наслідують клас EventEmitter)
