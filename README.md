@@ -426,3 +426,22 @@ Need to focus more on:
 ![image](https://github.com/user-attachments/assets/8311fb6b-8da7-412f-a8ba-6a9f2cbd3cc3) <br />
 
 8. Event Loop all small details (всі класи в node наслідують клас EventEmitter)
+
+
+NEXT: 
+
+
+Learn main concepts from
+9. https://nodejs.org/en/learn/getting-started/introduction-to-nodejs
+10. https://nodejs.org/en/learn/asynchronous-work/dont-block-the-event-loop
+11. https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick
+
+Other topics to improve:
+
+12. Streams
+13. Profiling
+14. CPU and memory management in Node.js
+15. Error handling
+16. Debugging
+17. Npm
+18. Event loop phases
