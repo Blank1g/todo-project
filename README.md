@@ -325,8 +325,8 @@ Here is small [guide](https://blog.kwal-it.be/how-to-create-an-angular-pipeline-
 
 Preparing with help of the [Node JS Interview Masterclass: Top 200 Questions](https://www.udemy.com/course/node-js-interview-masterclass-top-200-questions-with-pdf/?couponCode=ST10MT8624)
 
-Need to focus more on:
-1. Streams and files:<br />  
+
+69. Streams and files:<br />  
 > Стріми потрібні для читання і запису файлів в Node.js. <br />
 > Стрім - це колекція даних, схоже на масив чи об'єкт. Їх відмінність полягає в тому, що вони не обов'язково мають поміщатися в пам'ять, так як читання великих об'ємів даних в стрімах відбувається частинами (чанками). Також окрім роботи з великими даними, ми можемо працювати водночас з різними файлами, наприклад з допомогою методу ```.pipe``` (readableSrc.pipe(writableDest)) прочитати інформацію одного файлу і записати її в інший  <br />
 
@@ -351,7 +351,7 @@ Need to focus more on:
 
 > [Cтаття зі всіма деталями](https://www.freecodecamp.org/news/node-js-streams-everything-you-need-to-know-c9141306be93/)
 
-2. How HTTP works under the hood (TCP)
+70. How HTTP works under the hood (TCP)
 > HTTP (Hypertext Transfer Protocol) - це набір правил, який визнчає, як саме транспортуєються дані між клієнтом та сервером. Клієнт ініціює обмін даними викликаючи HTTP запит, в той час коли сервер отримує, опрацьовує цей запит і відправлвє відповідь клієнту. <br />
 > HTTP - це протокол обміну даних, який працює через з'єднання TCP (є одним із основних протоколів набору протоколів Інтернету. Він виник у початковій реалізації мережі, в якій він доповнював Інтернет-протокол (IP)).  <br />
 
@@ -390,11 +390,11 @@ Need to focus more on:
 
 > [Стаття зі всіма деталями](https://blog.postman.com/what-is-http/)
 
-3. What is mock and stub for testing?
+71. What is mock and stub for testing?
 > a. Stub - актор, який заміняє тілки малу частину функціоналу, який потрібно протестувати, наприклад тільки один з методів класу. Приклад такого ми можемо побачити тоді коли вішаємо spy на метод об'єкту, та переписуємо його функціонал для спрощення отримання результату.  <br />
 > b. Mock - може бути набагато більшим за stub, так як може повторювати функціонал всього модуля, об'єкта і так далі, а також перевіряти різну поведінку взаємодії з тим об'єктом, який він повторює. <br />
 
-4. NPM details <br />
+72. NPM details <br />
 > a. What is npm’s package.json? - головний файл для налаштування пакетів на проекті. Зазвичай знаходиться в корневій папці. Має в собі метадату проекту (name, version, dependencies, scripts). Дозволяє запускати команди (npm run) і встановлювати залежності (npm install). Можна згенерувати через npm init. <br />
 
 > b. What is npm’s package-lock.json? - файл в якому згенероване дерево залежностей, автоматично генерується для кожної зміни в package.json. Також основною його задачею є визначення яку версію встановлювати, для пакетів \~version або ^version з package.json, а також версія пакету може бути однаковою, але його контент різним, через це для конкретної версії в цьому файлі зберігається її ключ, яким можна дістати конкретні зміни. Різниця між ~ та ^ в тому, що перша (~) є приблизно версією і пакет з 1.2.3 може піднятися до версії 1.3.0, а друга (^) підніме версію проекту з 1.2.3 до 2.0.0, якщо вона існує. <br />
@@ -419,29 +419,22 @@ Need to focus more on:
 
 > j. What are the Pre & Post Scripts? - це скріпти які викликаются перед (Pre) потрібним скріптом, або після (Post) його виконання. Приклад: якщо створити ```precompress```, ```compress``` і ```postcompress``` скріпти, тоді коли ти викликаєш ```npm run compress```, спочатку відпрацює ```precompress```, тоді ```compress``` і після того ```postcompress```. <br />
    
-6. CAP теорема - теорема, яка каже про те, що спільне сховище даних не може одночасно надати дві з трьох таких гарантій: <br />
+73. CAP теорема - теорема, яка каже про те, що спільне сховище даних не може одночасно надати дві з трьох таких гарантій: <br />
 > - Узгодженість (Consistency) — це відноситься до лінійності. Це означає, що якщо два запити не є паралельними, то новий запит до бази даних повинен бачити дані, щонайменше, найсвіжіші, ніж попередній запит. Це відноситься до гарантії повного порядку за всіма операціями. <br />
 > - Доступність (Availability). Теорема стверджує, що кожен запит, який отримує безвідмовний вузол (екземпляр бази даних, що читає), повинен давати відповідь без помилок, без гарантії, що він містить останній запис.<br />
 > - Допуск до розділів (Partition Tolerance) — система повинна допускати втрату довільної кількості повідомлень між двома вузлами. <br />
 ![image](https://github.com/user-attachments/assets/8311fb6b-8da7-412f-a8ba-6a9f2cbd3cc3) <br />
 
-8. Event Loop all small details (всі класи в node наслідують клас EventEmitter)
-
-
-NEXT: 
-
-
 Learn main concepts from
-9. https://nodejs.org/en/learn/getting-started/introduction-to-nodejs
-10. https://nodejs.org/en/learn/asynchronous-work/dont-block-the-event-loop
-11. https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick
+74. https://nodejs.org/en/learn/getting-started/introduction-to-nodejs
+75. https://nodejs.org/en/learn/asynchronous-work/dont-block-the-event-loop
+76. https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick
 
 Other topics to improve:
 
-12. Streams
-13. Profiling
-14. CPU and memory management in Node.js
-15. Error handling
-16. Debugging
-17. Npm
-18. Event loop phases
+77. Streams
+78. Profiling
+79. CPU and memory management in Node.js
+80. Error handling <br />
+82. Debugging
+83. Event loop phases
