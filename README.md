@@ -425,16 +425,16 @@ Preparing with help of the [Node JS Interview Masterclass: Top 200 Questions](ht
 > - Допуск до розділів (Partition Tolerance) — система повинна допускати втрату довільної кількості повідомлень між двома вузлами. <br />
 ![image](https://github.com/user-attachments/assets/8311fb6b-8da7-412f-a8ba-6a9f2cbd3cc3) <br />
 
-Learn main concepts from
-74. https://nodejs.org/en/learn/getting-started/introduction-to-nodejs
-75. https://nodejs.org/en/learn/asynchronous-work/dont-block-the-event-loop
-76. https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick
+Learn main concepts from <br />
+74. https://nodejs.org/en/learn/getting-started/introduction-to-nodejs <br />
+75. https://nodejs.org/en/learn/asynchronous-work/dont-block-the-event-loop <br />
+76. https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick <br />
 
-Other topics to improve:
+Other topics to improve: <br />
 
-77. Streams
-78. Profiling
-79. CPU and memory management in Node.js
+77. Streams <br />
+78. Profiling <br />
+79. CPU and memory management in Node.js <br />
 80. Error handling <br />
-82. Debugging
-83. Event loop phases
+82. Debugging <br />
+83. Event loop phases <br />
