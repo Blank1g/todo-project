@@ -432,9 +432,8 @@ Learn main concepts from <br />
 
 Other topics to improve: <br />
 
-77. Streams <br />
-78. Profiling <br />
-79. CPU and memory management in Node.js <br />
-80. Error handling <br />
-82. Debugging <br />
-83. Event loop phases <br />
+77. Profiling <br />
+78. CPU and memory management in Node.js <br />
+79. Error handling <br />
+80. Debugging <br />
+81. Event loop phases <br />
