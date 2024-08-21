@@ -437,3 +437,12 @@ Other topics to improve: <br />
 79. Error handling <br />
 80. Debugging <br />
 81. Event loop phases <br />
+
+
+
+
+
+
+
+
+PREPARING FOR FE INTERVIEW, BUT GITHUB CONTRIBUTION IS GITHUB CONTRIBUTION!!!!!!
