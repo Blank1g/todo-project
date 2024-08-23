@@ -454,7 +454,7 @@ Other topics to improve: <br />
 > e. Uncaught Exception Handler: Node.js дозволяє обробляти неперехоплені виключення на рівні процесу. <br />
 > ![image](https://github.com/user-attachments/assets/d89d7f63-290c-4228-a07c-168c108c87f9) <br />
 
-> f. Unhandled Promise Rejections: Обробка неперехоплених помилок в обіцянках. <br />
+> f. Unhandled Promise Rejections: Обробка неперехоплених помилок. <br />
 > ![image](https://github.com/user-attachments/assets/bb7cf56b-97ca-4f28-b879-cb93567ddb5c) <br />
 
 80. Debugging <br />
