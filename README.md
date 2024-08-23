@@ -426,6 +426,7 @@ Preparing with help of the [Node JS Interview Masterclass: Top 200 Questions](ht
 ![image](https://github.com/user-attachments/assets/8311fb6b-8da7-412f-a8ba-6a9f2cbd3cc3) <br />
 
 Learn main concepts from <br />
+
 74. https://nodejs.org/en/learn/getting-started/introduction-to-nodejs <br />
 75. https://nodejs.org/en/learn/asynchronous-work/dont-block-the-event-loop <br />
 76. https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick <br />
@@ -433,8 +434,29 @@ Learn main concepts from <br />
 Other topics to improve: <br />
 
 77. Profiling <br />
+> Це процес під час якого збирається інформація, про роботу програми та її виконання, яке дає нам можливість виявити, що в коді споживає найбільше ресурсів. Це допомогає нам знайти місце, яке потрібно оптимізувати. <br />
+> В Node.js є кілька варіантів профайлингу: <br />
+> a. Вбудований прапорець ```--prof```, який додається до команди запуску програми, він створює файл і записує в нього інформацію про профілювання, після чого цей файл можна прочитати через ```tick-processor```, і проаналізувати методи, які споживають найбільше. <br />
+> b. Зовнішні модулі, такі як ```v8-profiler-node8``` або ```node-inspect```, в них є більше інформації та графічний інтерфейс. <br />
+> c. Chrome Dev Tools - також мають можливість профілювати код node.js. <br />
+
 78. CPU and memory management in Node.js <br />
 79. Error handling <br />
+> a. Callback Functions: Традиційно в Node.js часто використовується підхід з колбеками, де помилки передаються як перший аргумент функції-колбеку. Це дозволяє легко перевірити помилки на початку функції. <br />
+> ![image](https://github.com/user-attachments/assets/77e98445-9d5a-49fe-a90f-c1b62db39336)  <br />
+
+> b. Try/Catch: Використання конструкції try/catch для синхронного коду дозволяє перехопити помилки які виникають під час виконання блоку коду у try. <br />
+> c. Promise Error Handling: Помилки в Промісах можна обробляти за допомогою методу .catch(). <br />
+
+> d. EventEmitter Error Events: Для об'єктів, які є екземплярами EventEmitter, помилки часто передаються як події 'error'. <br />
+> ![image](https://github.com/user-attachments/assets/9dca19b5-6b11-4234-9a93-07c3cab3a6b1) <br />
+
+> e. Uncaught Exception Handler: Node.js дозволяє обробляти неперехоплені виключення на рівні процесу. <br />
+> ![image](https://github.com/user-attachments/assets/d89d7f63-290c-4228-a07c-168c108c87f9) <br />
+
+> f. Unhandled Promise Rejections: Обробка неперехоплених помилок в обіцянках. <br />
+> ![image](https://github.com/user-attachments/assets/bb7cf56b-97ca-4f28-b879-cb93567ddb5c) <br />
+
 80. Debugging <br />
 81. Event loop phases <br />
 
