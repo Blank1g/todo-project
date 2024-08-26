@@ -473,7 +473,31 @@ Other topics to improve: <br />
 > ![image](https://github.com/user-attachments/assets/bb7cf56b-97ca-4f28-b879-cb93567ddb5c) <br />
 
 80. Debugging <br />
+> Вбудований інспектор Node.js <br />
+>  Через Chrome DevTools. <br />
+
+> Debugger Statements <br />
+>  В JavaScript існує ключове слово debugger, яке використовується для остановки виконання коду у DevTools, коли відлагодження відбувається в браузері. <br />
+
+> Логування <br />
+>  Використання console.log, console.error, console.warn. <br />
+
+> Використання NPM пакетів для відлагодження <br />
+>  nodemon — автоматично перезапускає ваш сервер при зміні файлів. <br />
+>  debug — допомагає додавати настраїваемі дебаг логи. <br />
+>  node-inspector — використовується у випадках, коли --inspect не доступний. <br />
+
+> Використання Core Modules <br />
+>  Node.js має модулі які допомагають з відлагодженням, такі як util для форматування виведення, assert для афірмацій в тестах. <br />
+
 81. Event loop phases <br />
+
+>  ```Timers Phase```: Обробляє setTimeout() та setInterval() колбеки. <br />
+>  ```I/O Callbacks Phase```: Обробляє майже всі колбеки, крім закриття колбеків, таймерів та setImmediate(). Наприклад, колбеки для вводу/виводу файлів. <br />
+>  ```Idle, Prepare Phase```: Внутрішнє використання Node.js для тільки системних операцій. <br />
+>  ```Poll Phase```: Відновлює виконання скриптів на час відстеження та обробки подій вводу-виводу. Переходить до фази Check якщо іде запланований скрипт setImmediate(), інакше чекає на нові події вводу-виводу. <br />
+>  ```Check Phase```: Тут setImmediate() колбеки виконуються. <br />
+>  ```Close Callbacks Phase```: Обробляє колбеки закриття, наприклад socket.on('close', ...). <br />
 
 
 
