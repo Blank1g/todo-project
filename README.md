@@ -428,7 +428,16 @@ Preparing with help of the [Node JS Interview Masterclass: Top 200 Questions](ht
 Learn main concepts from <br />
 
 74. https://nodejs.org/en/learn/getting-started/introduction-to-nodejs <br />
+>  Node.js є open-source і cross-platform JavaScript runtime environment<br />
+>  Node.js раниться на V8 JavaScript engine<br />
+>  Node.js є однопоточною і ранить всі свої процеси  в ньому<br />
+>  Node.js має асинхронні примітиви input/output, які запобігають блокування виконання<br />
+>  Node.js повертається до операції коли її потрібно ініціалізувати і тоді коли прийде її результат<br />
+>  HTTP операції та створення серверу відбувається через createServer() метод http модуля, який встроєний в Node.js<br />
+>  В Node.js це event driven, що означає, те що різні івенти відпрацьовують майже для всіх операцій, їх можан слухвати і реагувати, а також створювати свої власні<br />
+
 75. https://nodejs.org/en/learn/asynchronous-work/dont-block-the-event-loop <br />
+
 76. https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick <br />
 
 Other topics to improve: <br />
