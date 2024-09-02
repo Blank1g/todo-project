@@ -546,4 +546,5 @@ Other topics to improve: <br />
 >  ```Check Phase```: Тут setImmediate() колбеки виконуються. <br />
 >  ```Close Callbacks Phase```: Обробляє колбеки закриття, наприклад socket.on('close', ...). <br />
 
-NOW I'M JUST LEARNING IT
+NOW I'M JUST LEARNING IT x2
+
