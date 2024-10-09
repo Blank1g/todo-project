@@ -546,5 +546,10 @@ Other topics to improve: <br />
 >  ```Check Phase```: Тут setImmediate() колбеки виконуються. <br />
 >  ```Close Callbacks Phase```: Обробляє колбеки закриття, наприклад socket.on('close', ...). <br />
 
+82. How to avoid blocking EVENT LOOP <br />
+
+>  ![image](https://github.com/user-attachments/assets/8853c062-95e1-4fa8-a6ea-d46fe1684611) <br />
+
+
 NOW I'M JUST LEARNING IT x2
 
